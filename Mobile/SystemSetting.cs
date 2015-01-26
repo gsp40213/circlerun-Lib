@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 /**
@@ -9,9 +9,8 @@ using System.Collections;
 public class SystemSetting {
 	
 	//setAlertDialog Varaible Area
-	int zIndex = 0;
-	string Message = "";
-	string Title = "";
+	int zIndex;
+	string Title;
 	
 	/**
 	 * setAlertDialog
@@ -20,8 +19,7 @@ public class SystemSetting {
 	 * @param {string}Title
 	 * @param {string}Message
 	 */
-	public void setAlertDialog(string Title,string Message){
-		this.Message = Message;
+	public void setAlertDialog(string Title){
 		this.Title = Title;
 		WindowSetting();
 		zIndex++;
@@ -40,17 +38,19 @@ public class SystemSetting {
 	 * OnGUI Windows Setting
 	 */
 	public void WindowSetting (){
+	
 		DpiResolution dpiResolution = new DpiResolution ();
+
 		float windowsWidth = dpiResolution.getScreenWidth(), widowsHeight = dpiResolution.setScreenHeight(200f), height = dpiResolution.setScreenHeight(80f);
-		Debug.Log (height);
-		GUI.Window (zIndex, new Rect(dpiResolution.getScreenWidth()/dpiResolution.getScreenWidth(), dpiResolution.getScreenHeight()/dpiResolution.getScreenHeight() + height,
-		                        dpiResolution.setScreenWidth(windowsWidth), dpiResolution.setScreenHeight(widowsHeight)), WindowLabelSetting, this.Title); 
+		GUI.Window (zIndex, new Rect(dpiResolution.getScreenWidth()/dpiResolution.getScreenWidth(), dpiResolution.getScreenHeight()/dpiResolution.getScreenHeight() + height, 
+		                             dpiResolution.setScreenWidth(windowsWidth), dpiResolution.setScreenHeight(widowsHeight)), WindowLabelSetting, this.Title); 
+
 	}
 	/**
 	 * WindowLabelSetting
 	 * Setup Label Message
 	 */
 	void WindowLabelSetting(int windowID){
-		print(this.Message);
+	
 	}
 }
