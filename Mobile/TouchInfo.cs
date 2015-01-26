@@ -43,7 +43,7 @@ public class TouchInfo : MonoBehaviour
 	 */
 	public void getTouch ()
 	{
-		
+
 	}
 	
 	/**
