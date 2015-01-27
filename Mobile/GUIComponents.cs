@@ -7,7 +7,6 @@ public class GUIComponents{
 	GUIStyle style;
 	float buttonWidthPostiton, buttonHeightPosistion;
 	bool OnClick = false;
-	float minMaxVlaue;
 
 	DpiResolution dpiResolution = new DpiResolution ();
 
@@ -23,17 +22,13 @@ public class GUIComponents{
 		return this.OnClick;
 	}
 
-	public float getHorizontalSlider(float value, float width, float height, float min, float max){
 
-		float HorizontalSliderWidth =  dpiResolution.getScreenWidth()/dpiResolution.setScreenWidth(100f);
-		float HorizontalSliderHeight = dpiResolution.getScreenHeight()/dpiResolution.setScreenHeight(140f);
+	
+	public float getHorizontalSlider (Rect screenRect, float sliderValue, float sliderMaxValue) {
 
-		this.minMaxVlaue = value;
-
-		GUI.HorizontalSlider (new Rect (HorizontalSliderWidth, HorizontalSliderHeight, width, height), value, min, max);
-
-//		Debug.Log (value);
-
-		return this.minMaxVlaue;
+		screenRect.x += screenRect.width; 
+		
+		sliderValue = GUI.HorizontalSlider (screenRect, sliderValue, 0.0f, sliderMaxValue);
+		return sliderValue;
 	}
 }
