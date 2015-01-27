@@ -11,6 +11,7 @@ public class SystemSetting {
 	//setAlertDialog Varaible Area
 	int zIndex;
 	string Title;
+	GUIStyle windowsStyle;
 	
 	/**
 	 * setAlertDialog
