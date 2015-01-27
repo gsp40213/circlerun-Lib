@@ -14,15 +14,14 @@ public class TouchInfo : MonoBehaviour
 	 */
 	public void getPositionX ()
 	{
-		//test code
-		for (int i = 0; i < Input.touchCount; ++i) {
+		for (var i = 0; i < Input.touchCount; ++i) {
 			Touch touch = Input.GetTouch (i);
 			if (touch.phase == TouchPhase.Began) {
-				 if (touch.position.x > (Screen.width/2)) {
-					GUI.Label(new Rect(10,10,50,50),touch.position.x.ToString());
-            	}	
+				if (touch.position.x > (Screen.width / 2)) {
+					print (touch.position.x);
+					variable = touch.position.x;
+				}
 			}
-			GUI.Label(new Rect(10,10,50,50),touch.position.x.ToString());
 		}
 	}
 	
@@ -33,7 +32,15 @@ public class TouchInfo : MonoBehaviour
 	 */
 	public void getPositionY ()
 	{
-		
+		for (int i = 0; i < Input.touchCount; ++i) {
+			Touch touch = Input.GetTouch (i);
+			if (touch.phase == TouchPhase.Began) {
+				 if (touch.position.x > (Screen.width/2)) {
+					GUI.Label(new Rect(10,10,50,50),touch.position.x.ToString());
+            	}	
+			}
+			GUI.Label(new Rect(10,10,50,50),touch.position.x.ToString());
+		}
 	}
 	
 	/**
