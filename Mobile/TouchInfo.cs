@@ -19,7 +19,7 @@ public class TouchInfo : MonoBehaviour
 			if (touch.phase == TouchPhase.Began) {
 				if (touch.position.x > (Screen.width / 2)) {
 					print (touch.position.x);
-					variable = touch.position.x;
+					//variable = touch.position.x;
 				}
 			}
 		}
