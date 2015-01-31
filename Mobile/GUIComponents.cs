@@ -6,26 +6,38 @@ public class GUIComponents{
 	Texture image;
 	float buttonWidthPostiton, buttonHeightPosistion;
 	bool OnClick;
+	Rect test;
+
+	/**
+	 * ImageButton
+	 * TODO ImageButton function(wordPosistionSize, image, style) 
+	 */
 	
-	DpiResolution dpiResolution = new DpiResolution ();
-	
-	public bool getImageButton(Texture buttonimage, GUIStyle buttonStyle, float width, float height){
-		
-		buttonWidthPostiton = dpiResolution.getScreenWidth () / dpiResolution.setScreenWidth (100f);
-		buttonHeightPosistion = dpiResolution.getScreenHeight () / dpiResolution.setScreenHeight (100f);
-		
-		this.image = buttonimage;
-		
-		if(GUI.Button (new Rect (buttonWidthPostiton, buttonHeightPosistion, image.width/width, image.height/height), buttonimage, buttonStyle))
-			this.OnClick = true;
-		return this.OnClick;
+	public bool getImageButton(Rect rectScreenRect, Texture image, GUIStyle style){
+
+		OnClick = GUI.Button (rectScreenRect, image, style);
+
+		return OnClick;
 	}
 
+	/**
+	 * Windows
+	 * TODO Windows function(wordPosistionSize, windwfunctuin, title)
+	 */
+	public void getWindwos (int id, Rect screenRect, GUI.WindowFunction windowFunctuin, string title){
+		 this.test = GUI.Window (id, screenRect, windowFunctuin, title);
+
+	}
+
+	/**
+	 * HorizontalSlider
+	 * TODO HorizontalSlider function(wordPosistionSize, SliderValue, MaxValue, SliderStyle, ThumbStyle)
+	 */
 	public float getHorizontalSlider (Rect screenRect, float sliderValue, float sliderMaxValue, GUIStyle slider, GUIStyle thumb){
 
 		screenRect.x += screenRect.width; 
-		
 		sliderValue = GUI.HorizontalSlider (screenRect, sliderValue, 0.0f, sliderMaxValue, slider, thumb);
+
 		return sliderValue;
 	}
 }

@@ -6,13 +6,12 @@ using System.Collections;
  * 
  * @class {void}setAlertDialog -> line 10 - 55
  */
-public class SystemSetting {
-	
+public class SystemSetting{
+
 	//setAlertDialog Varaible Area
 	int zIndex;
 	string Title;
-	GUIStyle windowsStyle;
-	
+
 	/**
 	 * setAlertDialog
 	 * TODO setAlertDialog Message
@@ -22,36 +21,24 @@ public class SystemSetting {
 	 */
 	public void setAlertDialog(string Title){
 		this.Title = Title;
-		WindowSetting();
+		getWindowSetting();
 		zIndex++;
 	}
-	
-	/**
-	 * getAlertDialog
-	 * TODO call Last Alert Message
-	 */
-	public void getAlertDialog(){
-		WindowSetting();	
-	}
-	
+
 	/**
 	 * WindowSetting
 	 * OnGUI Windows Setting
+	 * WindowsfunctionSetting can in another class use unction
 	 */
-	public void WindowSetting (){
-	
+	public void getWindowSetting (){
+
 		DpiResolution dpiResolution = new DpiResolution ();
+		GUIComponents guiCompoents = new GUIComponents ();
+		Rect wordPosition = new Rect (dpiResolution.getScreenWidth()/dpiResolution.getScreenWidth(),dpiResolution.getScreenHeight()/dpiResolution.getScreenWidth(), 
+		                              dpiResolution.getScreenWidth(), dpiResolution.getScreenHeight()/1.2f);
+		Test3 test = new Test3 ();
 
-		float windowsWidth = dpiResolution.getScreenWidth(), widowsHeight = dpiResolution.setScreenHeight(200f), height = dpiResolution.setScreenHeight(80f);
-		GUI.Window (zIndex, new Rect(dpiResolution.getScreenWidth()/dpiResolution.getScreenWidth(), dpiResolution.getScreenHeight()/dpiResolution.getScreenHeight() + height, 
-		                             dpiResolution.setScreenWidth(windowsWidth), dpiResolution.setScreenHeight(widowsHeight)), WindowLabelSetting, this.Title); 
+		guiCompoents.getWindwos (this.zIndex, wordPosition, test.testWidnws, this.Title);
 
-	}
-	/**
-	 * WindowLabelSetting
-	 * Setup Label Message
-	 */
-	void WindowLabelSetting(int windowID){
-	
 	}
 }
