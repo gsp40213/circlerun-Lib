@@ -2,11 +2,13 @@
 using System.Collections;
 
 public class GUIComponents{
-	
-	Texture image;
-	float buttonWidthPostiton, buttonHeightPosistion;
-	bool OnClick;
-	Rect test;
+
+	//ImageButton OnClick View
+	bool imageButtonOnClick;
+
+	// windwosTitleName and WindwosIdNumber
+	public string windowsTitle;
+	public int windowsId;
 
 	/**
 	 * ImageButton
@@ -15,9 +17,21 @@ public class GUIComponents{
 	
 	public bool getImageButton(Rect rectScreenRect, Texture image, GUIStyle style){
 
-		OnClick = GUI.Button (rectScreenRect, image, style);
+		imageButtonOnClick = GUI.Button (rectScreenRect, image, style);
 
-		return OnClick;
+		return imageButtonOnClick;
+	}
+
+	/**
+	 * setAlertDialog
+	 * TODO setAlertDialog Message
+	 * 
+	 * @param {string}Title
+	 * @param {string}Message
+	 */
+	public void setAlertDialog(string Title){
+		this.windowsTitle = Title;
+		windowsId++;
 	}
 
 	/**
@@ -25,8 +39,10 @@ public class GUIComponents{
 	 * TODO Windows function(wordPosistionSize, windwfunctuin, title)
 	 */
 	public void getWindwos (int id, Rect screenRect, GUI.WindowFunction windowFunctuin, string title){
-		 this.test = GUI.Window (id, screenRect, windowFunctuin, title);
 
+		title = this.windowsTitle;
+		id = this.windowsId;
+		GUI.Window (id, screenRect, windowFunctuin, title);
 	}
 
 	/**
