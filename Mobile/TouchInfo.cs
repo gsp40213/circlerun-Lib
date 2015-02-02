@@ -14,15 +14,7 @@ public class TouchInfo : MonoBehaviour
 	 */
 	public void getPositionX ()
 	{
-		for (var i = 0; i < Input.touchCount; ++i) {
-			Touch touch = Input.GetTouch (i);
-			if (touch.phase == TouchPhase.Began) {
-				if (touch.position.x > (Screen.width / 2)) {
-					print (touch.position.x);
-					//variable = touch.position.x;
-				}
-			}
-		}
+		return Input.GetTouch(0).position.x;
 	}
 	
 	/**
@@ -32,15 +24,7 @@ public class TouchInfo : MonoBehaviour
 	 */
 	public void getPositionY ()
 	{
-		for (int i = 0; i < Input.touchCount; ++i) {
-			Touch touch = Input.GetTouch (i);
-			if (touch.phase == TouchPhase.Began) {
-				 if (touch.position.x > (Screen.width/2)) {
-					GUI.Label(new Rect(10,10,50,50),touch.position.x.ToString());
-            	}	
-			}
-			GUI.Label(new Rect(10,10,50,50),touch.position.x.ToString());
-		}
+		return Input.GetTouch(0).position.y; 
 	}
 	
 	/**
@@ -50,7 +34,7 @@ public class TouchInfo : MonoBehaviour
 	 */
 	public void getTouch ()
 	{
-
+		//TODO Emit Ray-cast get Object ID.
 	}
 	
 	/**
@@ -61,6 +45,7 @@ public class TouchInfo : MonoBehaviour
 	 */
 	public void isTouch ()
 	{
-		
+		//TODO RETURN if touch screen
+		return ture;
 	}
 }
