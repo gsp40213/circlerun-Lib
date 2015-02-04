@@ -1,11 +1,38 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
+
+/**
+usage:
+
+private float touchX;
+
+void update(){
+	TouchInfo touch = new TouchInfo();
+	touch.listen();
+	touchX = touch.getPositionX();
+	Debug.log(touch.getPositionX());
+}
+void OnGUI(){
+	GUI.Label(new React(25,25,125,25),"Listen for touch position x : "+touchX);
+}
+**/
+
 
 /**
  * getTouchInfo
 */
 public class TouchInfo : MonoBehaviour
 {
+	private Touch touch;
+	
+	/**
+	* Listen
+	* listen touch move
+	*
+	*/
+	public void listen(){
+		touch = Input.GetTouch(0);
+	}
 	
 	/**
 	 * getPositionX
@@ -14,7 +41,7 @@ public class TouchInfo : MonoBehaviour
 	 */
 	public void getPositionX ()
 	{
-		return Input.GetTouch(0).position.x;
+		return touch.position.x;
 	}
 	
 	/**
@@ -24,7 +51,7 @@ public class TouchInfo : MonoBehaviour
 	 */
 	public void getPositionY ()
 	{
-		return Input.GetTouch(0).position.y; 
+		return touch.position.y;
 	}
 	
 	/**
