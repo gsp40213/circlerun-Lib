@@ -3,7 +3,7 @@ using System.Collections;
 
 /**
 usage:
-
+//Android runtime error!
 private float touchX;
 
 void update(){
