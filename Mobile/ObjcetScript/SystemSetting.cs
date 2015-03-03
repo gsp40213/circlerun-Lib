@@ -6,6 +6,9 @@ public class SystemSetting : MonoBehaviour{
 	//ImageButton in a Image and buttonStyle
 	public Texture image;
 	public GUIStyle buttonstyle;
+	// url Internet name
+	private string official_website = "https://www.facebook.com/pages/Circlerun/1400615190242549";
+
 	/**
 	 * WindowSetting
 	 * OnGUI Windows Setting
@@ -31,7 +34,7 @@ public class SystemSetting : MonoBehaviour{
 		Rect wordPosition = new Rect (dpiResolution.getScreenWidth()/dpiResolution.getScreenWidth(),dpiResolution.getScreenHeight()/dpiResolution.getScreenWidth(), 
 		                              image.width/5, image.height/2);
 		if(guiCompents.getImageButton (wordPosition,image, buttonstyle)){
-			Debug.Log("ok");
+			Application.OpenURL(official_website);
 		}
 	}
 }

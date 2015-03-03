@@ -3,8 +3,9 @@ using System.Collections;
 
 public class DpiResolution {
 
-	float width = Screen.width / 1280 / 2;
-	float height = Screen.height / 720 / 2;
+	//phone size
+	float width = Screen.width / 1200 / 2;
+	float height = Screen.height / 1920 / 2;
 
 	public float setScreenWidth(float setWidth){
 
@@ -12,7 +13,7 @@ public class DpiResolution {
 
 		return setWidth;
 	}
-
+	
 	public float setScreenHeight(float setHeight){
 
 		setHeight += height;

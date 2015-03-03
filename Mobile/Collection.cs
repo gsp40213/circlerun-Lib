@@ -49,8 +49,12 @@ public class Collection{
 	 * @param {float} inputTimeNumber
 	 * @param return {float} SystemTime
 	 */ 
-	public float setSelectTime(float inputTimeNumber){
-		float systemTime = Time.time + inputTimeNumber;
+	public int setSelectTime(float inputTimeNumber){
+
+		inputTimeNumber += Time.time;
+
+		int systemTime = Mathf.FloorToInt(inputTimeNumber);
+
 		return systemTime;
 	}
 }
